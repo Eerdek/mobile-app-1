@@ -1,0 +1,61 @@
+name: akifoods_app
+description: "AKI Foods ажилтны апп"
+publish_to: 'none'
+
+version: 1.0.1+2
+
+environment:
+  sdk: ^3.13.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  http: ^1.6.0
+  shared_preferences: ^2.5.6
+  flutter_secure_storage: ^11.2.0
+  intl: ^0.20.3
+  flutter_map: ^8.3.2
+  latlong2: ^0.10.1
+  excel: ^4.0.6
+  share_plus: ^13.3.1
+  # ⚠ BLE: flutter_blue_plus БИШ — тэр нь ашгийн байгууллагад төлбөртэй
+  #   commercial лиценз шаарддаг (бас build бүрт telemetry илгээдэг).
+  #   universal_ble нь BSD-3.
+  universal_ble: ^3.1.2
+  flutter_localizations:
+    sdk: flutter
+  geolocator: ^14.0.1
+  url_launcher: ^6.3.3
+  image_picker: ^1.2.4
+  package_info_plus: ^10.2.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/akifoods-logo.png
+
+  # Баримтын монспэйс фонт — web-ийн receipt-mono.css-ээс гаргасан ИЖИЛ subset.
+  #   AkiReceiptMono     → Chivo Mono, ASCII (тоо, латин)
+  #   AkiReceiptMonoCyrl → IBM Plex Mono, кирилл + ₮ № • – …
+  # ⚠ Латин тал нь web дээр ч 400/700 хоёуланд НЭГ файл (тод хувилбаргүй) —
+  #   700-д ч мөн тэр файлыг заана. Эс бөгөөс Flutter хуурамч тод үүсгэж,
+  #   цаасан дээр тоо web-ийнхээс бүдүүн гарна.
+  fonts:
+    - family: AkiReceiptMono
+      fonts:
+        - asset: assets/fonts/AkiReceiptMonoLatin.ttf
+        - asset: assets/fonts/AkiReceiptMonoLatin.ttf
+          weight: 700
+    - family: AkiReceiptMonoCyrl
+      fonts:
+        - asset: assets/fonts/AkiReceiptMonoCyrl-Regular.ttf
+        - asset: assets/fonts/AkiReceiptMonoCyrl-Bold.ttf
+          weight: 700
